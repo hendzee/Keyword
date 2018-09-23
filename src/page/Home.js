@@ -155,7 +155,6 @@ class Home extends Component{
 const styles = {
     styContent: {
         flex: 1,                
-        backgroundColor: '#dfe4ea'
     },    
     styTopTitle: {
         flex: 1, 

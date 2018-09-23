@@ -248,7 +248,6 @@ class AddItems extends Component{
 const styles = {
     styContent: {
         flex: 1,                
-        backgroundColor: '#dfe4ea'
     },
     styInput: {
         flex:1,        

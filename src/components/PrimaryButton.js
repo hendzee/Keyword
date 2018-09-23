@@ -24,7 +24,7 @@ const styles = {
         flex: 0,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 3,
+        borderRadius: 30,
         height: 45,
         backgroundColor: '#1e90ff',        
     }

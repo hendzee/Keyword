@@ -15,10 +15,9 @@ const styles = {
     styContent: {
         flex: 0,
         height: 45,
-        borderRadius: 3,
         flexDirection: 'row',
         justifyContent: 'center',        
-        backgroundColor: '#f1f2f6',       
+        backgroundColor: '#dfe4ea',       
         marginTop: 13,
         marginBottom: 13
     }

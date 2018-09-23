@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, StatusBar, Image, FlatList} from 'react-native';
 import { DataList, HeaderButton, CommonPage, TitleBar, WordList, IconBox } from '../components';
 import Realm from 'realm';
+import { Font } from '../utils/Font';
 
 class Home extends Component{
     constructor(props){
@@ -154,12 +155,13 @@ class Home extends Component{
 
 const styles = {
     styContent: {
-        flex: 1,                
+        flex: 1,              
     },    
     styTopTitle: {
         flex: 1, 
         color: '#747d8c', 
-        fontWeight: '800'
+        fontSize: 18,
+        fontFamily: Font.quicksand  
     },
 }
 

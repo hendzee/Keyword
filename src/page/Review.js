@@ -102,8 +102,8 @@ const styles = {
     },
     stySubtitle: {
         color: '#a4b0be',                             
-        fontWeight: '800',
-        marginTop: 15
+        marginTop: 15,
+        fontFamily: 'quicksand',
     },
     styIcon: {
         height: 19,
@@ -115,8 +115,8 @@ const styles = {
         flex: 0, 
         height: 21, 
         justifyContent: 'center', 
-        fontWeight: '800', 
-        color: '#747d8c'
+        color: '#747d8c',
+        fontFamily: 'quicksand',
     },    
 }
 

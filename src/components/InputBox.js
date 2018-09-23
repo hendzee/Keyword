@@ -19,7 +19,7 @@ const styles = {
         justifyContent: 'center',        
         backgroundColor: '#dfe4ea',       
         marginTop: 13,
-        marginBottom: 13
+        marginBottom: 13,
     }
 }
 

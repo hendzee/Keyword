@@ -43,15 +43,18 @@ const styles = {
     styTitle: {
         fontWeight: '800',
         fontSize: 19,
-        color: '#747d8c'
+        color: '#747d8c',
+        fontFamily: 'quicksand'
     },
     stySubTitle: {
-        color: '#747d8c'
+        color: '#747d8c',
+        fontFamily: 'quicksand'
     },
     styWordSum: {       
         fontSize: 13.5,
         fontWeight: '900',
-        color: '#52bf90'    
+        color: '#52bf90',
+        fontFamily: 'quicksand'    
     },  
     styCheckbox: {
         marginRight: 5

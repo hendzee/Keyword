@@ -93,8 +93,8 @@ const styles = {
     },
     stySubtitle: {
         color: '#a4b0be',                             
-        fontWeight: '800',
-        marginTop: 15
+        marginTop: 15,
+        fontFamily: 'quicksand',
     },
 }
 

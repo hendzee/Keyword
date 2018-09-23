@@ -158,7 +158,7 @@ class AddItems extends Component{
                             style={ styInput }
                             placeholder='input title'
                             placeholderTextColor='#a4b0be'
-                            underlineColorAndroid='#f1f2f6'
+                            underlineColorAndroid= '#dfe4ea'
                             maxLength={ 25 }
                             onChangeText={(text) => this.setState({ title: text })}
                             value={ this.state.title }
@@ -173,7 +173,7 @@ class AddItems extends Component{
                             style={ styInput }
                             placeholder='input category'
                             placeholderTextColor='#a4b0be'
-                            underlineColorAndroid='#f1f2f6'
+                            underlineColorAndroid= '#dfe4ea'
                             maxLength={ 15 }
                             onChangeText={(text) => this.setState({ category: text })}
                             value={ this.state.category }
@@ -191,7 +191,7 @@ class AddItems extends Component{
                             style={ styInput }
                             placeholder='input abbrevation'
                             placeholderTextColor='#a4b0be'
-                            underlineColorAndroid='#f1f2f6'
+                            underlineColorAndroid= '#dfe4ea'
                             maxLength={ 15 }
                             onChangeText={(text) => this.setState({ tempAbbr: text })}
                             value={ this.state.tempAbbr }
@@ -206,7 +206,7 @@ class AddItems extends Component{
                             style={ styInput }
                             placeholder='input meaning'
                             placeholderTextColor='#a4b0be'
-                            underlineColorAndroid='#f1f2f6'
+                            underlineColorAndroid= '#dfe4ea'
                             maxLength={ 15 }
                             onChangeText={(text) => this.setState({ tempMeaning: text })}
                             value={ this.state.tempMeaning }
@@ -252,7 +252,9 @@ const styles = {
     styInput: {
         flex:1,        
         height: 45,
-        color: '#747d8c'
+        color: '#747d8c',
+        fontFamily: 'quicksand',
+        paddingTop: 10
     },
     styIcon: {        
         height: 17,
@@ -265,12 +267,12 @@ const styles = {
     },
     stySubtitle: {
         color: '#a4b0be',                             
-        fontWeight: '800',
-        marginTop: 15
+        marginTop: 15,
+        fontFamily: 'quicksand'
     },
     styButtonText: {
         color: '#fff', 
-        fontWeight: '800'
+        fontFamily: 'quicksand'
     }
 }
 

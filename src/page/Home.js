@@ -118,7 +118,7 @@ class Home extends Component{
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
                 <CommonPage>
-                    <TitleBar>
+                    {/* <TitleBar>
                         <Text style={ styTopTitle }>My List</Text>
                         <WordList>
                             <IconBox>
@@ -131,7 +131,7 @@ class Home extends Component{
                                 />
                             </IconBox>
                         </WordList>
-                    </TitleBar>                  
+                    </TitleBar>                   */}
                     <FlatList 
                         data={this.state.mainTableData}
                         extraData={this.state}
@@ -154,7 +154,8 @@ class Home extends Component{
 
 const styles = {
     styContent: {
-        flex: 1,              
+        flex: 1, 
+        backgroundColor: '#ffffff'             
     },    
     styTopTitle: {
         flex: 1, 

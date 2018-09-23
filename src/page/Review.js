@@ -40,11 +40,7 @@ class Review extends Component{
 
         return this.state.listTableData.map(data => 
             <DetailList key={ data.id_list }>                                    
-                <RowBox>         
-                    <Image 
-                        source={require('../img/dot.png')}
-                        style={ styIcon } 
-                    />                              
+                <RowBox>                                   
                     <Text style={styText}>{ data.abbrevation + " - " + data.meaning }</Text>                                                
                 </RowBox>
             </DetailList>
@@ -98,7 +94,7 @@ class Review extends Component{
 const styles = { 
     styContent: {
         flex: 1,                
-        backgroundColor: '#dfe4ea'
+        backgroundColor: '#ffffff'
     },
     stySubtitle: {
         color: '#a4b0be',                             

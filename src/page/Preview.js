@@ -89,7 +89,7 @@ class Preview extends Component{
 const styles = {
     styContent: {
         flex: 1,                
-        backgroundColor: '#dfe4ea'
+        backgroundColor: '#ffffff'
     },
     stySubtitle: {
         color: '#a4b0be',                             

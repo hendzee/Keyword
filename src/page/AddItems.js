@@ -158,7 +158,7 @@ class AddItems extends Component{
                             style={ styInput }
                             placeholder='input title'
                             placeholderTextColor='#a4b0be'
-                            underlineColorAndroid= '#dfe4ea'
+                            underlineColorAndroid= '#f0fef6'
                             maxLength={ 25 }
                             onChangeText={(text) => this.setState({ title: text })}
                             value={ this.state.title }
@@ -173,7 +173,7 @@ class AddItems extends Component{
                             style={ styInput }
                             placeholder='input category'
                             placeholderTextColor='#a4b0be'
-                            underlineColorAndroid= '#dfe4ea'
+                            underlineColorAndroid= '#f0fef6'
                             maxLength={ 15 }
                             onChangeText={(text) => this.setState({ category: text })}
                             value={ this.state.category }
@@ -191,7 +191,7 @@ class AddItems extends Component{
                             style={ styInput }
                             placeholder='input abbrevation'
                             placeholderTextColor='#a4b0be'
-                            underlineColorAndroid= '#dfe4ea'
+                            underlineColorAndroid= '#f0fef6'
                             maxLength={ 15 }
                             onChangeText={(text) => this.setState({ tempAbbr: text })}
                             value={ this.state.tempAbbr }
@@ -206,7 +206,7 @@ class AddItems extends Component{
                             style={ styInput }
                             placeholder='input meaning'
                             placeholderTextColor='#a4b0be'
-                            underlineColorAndroid= '#dfe4ea'
+                            underlineColorAndroid= '#f0fef6'
                             maxLength={ 15 }
                             onChangeText={(text) => this.setState({ tempMeaning: text })}
                             value={ this.state.tempMeaning }
@@ -247,7 +247,8 @@ class AddItems extends Component{
 
 const styles = {
     styContent: {
-        flex: 1,                
+        flex: 1,     
+        backgroundColor: '#ffffff'           
     },
     styInput: {
         flex:1,        

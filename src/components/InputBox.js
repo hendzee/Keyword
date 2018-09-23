@@ -17,7 +17,7 @@ const styles = {
         height: 45,
         flexDirection: 'row',
         justifyContent: 'center',        
-        backgroundColor: '#dfe4ea',       
+        backgroundColor: '#f0fef6',       
         marginTop: 13,
         marginBottom: 13,
     }

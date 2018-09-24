@@ -62,22 +62,40 @@ class Preview extends Component{
     }    
 
     render(){
-        const { styContent, stySubtitle } = styles;        
+        const { styContent, stySubtitle, styList } = styles;        
 
         return(
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
                 <ScrollView>
-                    <CommonPage>                
-                        <Text style={ stySubtitle }>Title</Text>
-                        <Text>{ this.state.title }</Text>
-                        <Text style={ stySubtitle }>Category</Text>
-                        <Text>{ this.state.category }</Text>
-                        <Text style={ stySubtitle }>Total Key</Text>
-                        <Text>{ this.state.numberKey }</Text>
-                        <Text style={ stySubtitle }>Keyword</Text>
-                        <Text>{ this.setKeyword() }</Text>
-                        <Text style={ stySubtitle }>Keyword List</Text>
+                    <CommonPage>   
+                        <View style={styList}>
+                            <Text style={ stySubtitle }>Title</Text>
+                        </View>
+                        <View style={styList}>                            
+                            <Text>{ this.state.title }</Text>
+                        </View>             
+                        <View style={styList}>                            
+                            <Text style={ stySubtitle }>Category</Text>
+                        </View>
+                        <View style={styList}>                            
+                            <Text>{ this.state.category }</Text>
+                        </View>
+                        <View style={styList}>                            
+                            <Text style={ stySubtitle }>Total Key</Text>
+                        </View>
+                        <View style={styList}>                            
+                            <Text>{ this.state.numberKey }</Text>
+                        </View>
+                        <View style={styList}>                            
+                            <Text style={ stySubtitle }>Keyword</Text>
+                        </View>
+                        <View style={styList}>                            
+                            <Text>{ this.setKeyword() }</Text>
+                        </View>
+                        <View style={styList}>
+                            <Text style={ stySubtitle }>Keyword List</Text>
+                        </View>
                         { this.extractData() }
                     </CommonPage>
                 </ScrollView>
@@ -96,6 +114,11 @@ const styles = {
         marginTop: 15,
         fontFamily: 'quicksand',
     },
+    styList: {
+       // borderBottomWidth: 1,
+        borderBottomColor: '#D5DCE4',
+        paddingBottom: 5
+    }
 }
 
 export { Preview }

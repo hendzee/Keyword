@@ -5,14 +5,16 @@ const App = StackNavigator({
     home: {
         screen: Home,
         navigationOptions: {
-            title: 'KeyWord',
+            title: 'keyword',
             headerStyle: {
                 backgroundColor: '#52bf90',
                 shadowOpacity: 0,                
                 elevation: 0
             },
             headerTitleStyle: {                
-                color: '#f8fcf6'
+                color: '#ffffff',
+                fontWeight: '200',
+                fontFamily: 'quicksand'
             },
             headerLeft: null
         }
@@ -27,7 +29,9 @@ const App = StackNavigator({
                 elevation: 0
             },
             headerTitleStyle: {                
-                color: '#f8fcf6'
+                color: '#ffffff',
+                fontWeight: '200',
+                fontFamily: 'quicksand'
             },            
         }
     },
@@ -41,7 +45,9 @@ const App = StackNavigator({
                 elevation: 0,                
             },
             headerTitleStyle: {
-                color: '#f8fcf6',                
+                color: '#ffffff',
+                fontWeight: '200',
+                fontFamily: 'quicksand'                
             }
         },          
     },
@@ -55,7 +61,9 @@ const App = StackNavigator({
                 elevation: 0
             },
             headerTitleStyle: {                
-                color: '#f8fcf6'
+                color: '#ffffff',
+                fontWeight: '200',
+                fontFamily: 'quicksand'
             },            
         }
     },

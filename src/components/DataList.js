@@ -20,12 +20,7 @@ class DataList extends Component{
                     <DescList>                  
                         <Text style={ styTitle }>{ this.props.data.title }</Text>                        
                         <Text style={ stySubTitle }>{ this.props.data.category }</Text>
-                    </DescList>
-                    <WordList>
-                        <Text style={ styWordSum }>
-                            { this.props.data.status }
-                        </Text>                                
-                    </WordList>                        
+                    </DescList>                      
                 </DetailList>                                
             </TouchableOpacity>
         );
@@ -41,10 +36,9 @@ const styles = {
         marginBottom: 5,        
     },       
     styTitle: {
-        fontWeight: '800',
         fontSize: 19,
         color: '#747d8c',
-        fontFamily: 'quicksand'
+        fontFamily: 'quicksand_medium'
     },
     stySubTitle: {
         color: '#747d8c',

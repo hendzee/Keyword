@@ -274,11 +274,11 @@ const styles = {
     },
     styButtonText: {
         color: '#fff', 
-        fontFamily: 'quicksand'
+        fontFamily: 'quicksand_medium'
     },
     styButtonText2: {
         color: '#52BF90', 
-        fontFamily: 'quicksand'
+        fontFamily: 'quicksand_medium'
     }
 }
 

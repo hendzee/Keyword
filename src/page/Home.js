@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StatusBar, Image, FlatList} from 'react-native';
-import { DataList, HeaderButton, CommonPage, TitleBar, WordList, IconBox } from '../components';
+import { DataList, HeaderButton, CommonPage, WordList, IconBox } from '../components';
 import Realm from 'realm';
 
 class Home extends Component{
@@ -97,13 +97,13 @@ class Home extends Component{
                     <HeaderButton onPress={navigation.getParam('deleteHandler')}>
                         <Image 
                             source={require('../img/delete.png')} 
-                            style={{ width: 31, height: 31, tintColor: '#f8fcf6' }}                                             
+                            style={{ width: 31, height: 31, tintColor: '#ffffff' }}                                             
                         />
                     </HeaderButton>
                     <HeaderButton onPress={() => navigate('additems')}>
                         <Image 
                             source={require('../img/add.png')} 
-                            style={{ width: 31, height: 31, tintColor: '#f8fcf6' }}                                             
+                            style={{ width: 31, height: 31, tintColor: '#ffffff' }}                                             
                         />
                     </HeaderButton>
                 </View>
@@ -118,20 +118,6 @@ class Home extends Component{
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
                 <CommonPage>
-                    {/* <TitleBar>
-                        <Text style={ styTopTitle }>My List</Text>
-                        <WordList>
-                            <IconBox>
-                                <Image source={require('../img/check.png')} 
-                                    style={{
-                                        height: 19,
-                                        width: 19,                                
-                                        tintColor: '#52bf90',                                
-                                    }}                            
-                                />
-                            </IconBox>
-                        </WordList>
-                    </TitleBar>                   */}
                     <FlatList 
                         data={this.state.mainTableData}
                         extraData={this.state}

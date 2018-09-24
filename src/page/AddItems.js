@@ -140,7 +140,8 @@ class AddItems extends Component{
     }
 
     render(){
-        const { styContent, styInput, styIcon, stySubtitle, styButtonText } = styles;
+        const { styContent, styInput, styIcon, stySubtitle, styButtonText, 
+        styButtonText2 } = styles;
 
         return(
             <View style={ styContent }>
@@ -214,7 +215,7 @@ class AddItems extends Component{
                     </InputBox>
                     <RowBox>  
                         <SecondaryButton onPress={ this.deleteState }>
-                            <Text style={ styButtonText }> Cancel </Text>
+                            <Text style={ styButtonText2 }> Cancel </Text>
                         </SecondaryButton>                            
                         <Separator />
                         <SecondaryButton onPress={ () => this.props.navigation.navigate(
@@ -227,7 +228,7 @@ class AddItems extends Component{
                                     numberKey: this.state.numberKey,
                                     status: this.state.status
                                 }) }>
-                            <Text style={ styButtonText }> Preview </Text>
+                            <Text style={ styButtonText2 }> Preview </Text>
                         </SecondaryButton>
                         <Separator />
                         <PrimaryButton onPress={ this.insertState }>
@@ -253,9 +254,9 @@ const styles = {
     styInput: {
         flex:1,        
         height: 45,
-        color: '#747d8c',
+        color: '#22C35C',
         fontFamily: 'quicksand',
-        paddingTop: 10
+        paddingTop: 10,
     },
     styIcon: {        
         height: 17,
@@ -264,7 +265,7 @@ const styles = {
         marginTop: 15,               
         marginRight: 15,      
         marginBottom: 15,
-        tintColor: '#747d8c'
+        tintColor: '#52BF90'
     },
     stySubtitle: {
         color: '#a4b0be',                             
@@ -273,6 +274,10 @@ const styles = {
     },
     styButtonText: {
         color: '#fff', 
+        fontFamily: 'quicksand'
+    },
+    styButtonText2: {
+        color: '#52BF90', 
         fontFamily: 'quicksand'
     }
 }

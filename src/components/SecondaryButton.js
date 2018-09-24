@@ -26,7 +26,9 @@ const styles = {
         alignItems: 'center',
         borderRadius: 30,
         height: 45,
-        backgroundColor: '#a4b0be',        
+        borderWidth: 1,
+        borderColor: '#52BF90',
+        backgroundColor: 'transparent',        
     }
 }
 

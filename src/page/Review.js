@@ -61,25 +61,20 @@ class Review extends Component{
     }
 
     render(){  
-        const { styContent, stySubtitle, styIcon, styText } = styles;
+        const { styContent, stySubtitle, styIcon, styText, styTopContent,
+            styTopText, styTopSub } = styles;
 
         return(
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
+                <View style={styTopContent}>
+                    <Text style={ styTopText }>
+                        Keyword
+                    </Text>                                   
+                    <Text style={styTopSub}>{ this.extractData() }</Text>                                            
+                </View>
                 <CommonPage>
                     <ScrollView>
-                        <Text style={ stySubtitle }>
-                            Keyword
-                        </Text>
-                        <DetailList>                                    
-                            <RowBox>                        
-                                <Image 
-                                    source={require('../img/key.png')}
-                                    style={ styIcon } 
-                                />                              
-                                <Text style={styText}>{ this.extractData() }</Text>                            
-                            </RowBox>
-                        </DetailList>
                         <Text style={ stySubtitle }>
                             Abbrevation
                         </Text> 
@@ -113,7 +108,24 @@ const styles = {
         justifyContent: 'center', 
         color: '#747d8c',
         fontFamily: 'quicksand',
-    },    
+    },  
+    styTopContent: {
+        width: '100%',
+        height: 150,
+        backgroundColor: '#52BF90',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    styTopText: {
+        fontFamily: 'quicksand_medium',
+        fontSize: 19,
+        color: '#fff'
+    },
+    styTopSub: {
+        fontFamily: 'quicksand',
+        fontSize: 12,
+        color: '#fff'
+    }
 }
 
 //Realm Database

@@ -94,37 +94,46 @@ class AddItems extends Component{
     }
 
     saveData = () => {
-        this.createIdMain();
+        if (this.state.title == null || this.state.category == null || 
+            this.state.title == '' || this.state.category == ''){
+            Alert.alert('input title and category');
+        }else {
+            if (this.state.numberKey <= 0){
+                Alert.alert('create abbrevation');
+            }else {
+                this.createIdMain();
         
-        Realm.open(databaseOptions).then(realm => {
-            
-            realm.write(() => {
-                realm.create('main_table', {
-                    id_main: this.state.id_main,
-                    title: this.state.title,
-                    category: this.state.category,
-                    status: this.state.status
-                })
-            });
-
-            this.state.abbrAndMeaning.map(data => {
-                let tempIdList = this.createIdList();
-                let abbrVal = data.abbrData;
-                let meaningVal = data.meaningData;
-                
-                realm.write(() => {                                                    
-                    realm.create('list_table', {
-                        id_main: this.state.id_main,
-                        id_list: tempIdList,
-                        abbrevation: abbrVal,
-                        meaning: meaningVal
+                Realm.open(databaseOptions).then(realm => {
+                    
+                    realm.write(() => {
+                        realm.create('main_table', {
+                            id_main: this.state.id_main,
+                            title: this.state.title,
+                            category: this.state.category,
+                            status: this.state.status
+                        })
                     });
-                });                        
-            });
-            
-            this.cleanState();
-            Alert.alert('data saved');
-        });
+
+                    this.state.abbrAndMeaning.map(data => {
+                        let tempIdList = this.createIdList();
+                        let abbrVal = data.abbrData;
+                        let meaningVal = data.meaningData;
+                        
+                        realm.write(() => {                                                    
+                            realm.create('list_table', {
+                                id_main: this.state.id_main,
+                                id_list: tempIdList,
+                                abbrevation: abbrVal,
+                                meaning: meaningVal
+                            });
+                        });                        
+                    });
+                    
+                    this.cleanState();
+                    Alert.alert('data saved');
+                });
+            }
+        }
     }
 
     cleanState = () => {
@@ -215,7 +224,7 @@ class AddItems extends Component{
                     </InputBox>
                     <RowBox>  
                         <SecondaryButton onPress={ this.deleteState }>
-                            <Text style={ styButtonText2 }> Cancel </Text>
+                            <Text style={ styButtonText2 }> Reset </Text>
                         </SecondaryButton>                            
                         <Separator />
                         <SecondaryButton onPress={ () => this.props.navigation.navigate(

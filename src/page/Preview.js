@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, ScrollView, StatusBar, Image } from 'react-native';
-import { HeaderButton, CommonPage } from '../components';
+import { HeaderButton, CommonPage, RowBox, DetailList } from '../components';
 import { NavigationActions } from 'react-navigation';
 
 class Preview extends Component{    
@@ -22,8 +22,14 @@ class Preview extends Component{
 
     //extract data abbr and meaning
     extractData = () => {
+        const { styText } = styles;
+
         return this.state.abbrAndMeaning.map(data =>        
-            <Text key={ data.abbrData }>{ data.abbrData + " - " + data.meaningData }</Text>
+            <DetailList key={ data.abbrData }>                                    
+                <RowBox>                                   
+                    <Text style={styText}>{ data.abbrData + " - " + data.meaningData }</Text>                                                
+                </RowBox>
+            </DetailList>
         )
     }
 
@@ -40,11 +46,11 @@ class Preview extends Component{
     insertState = () =>{
         const { params } = this.props.navigation.state;
 
-        this.setState({ id_main: params.id_main });
-        this.setState({ title: params.title });
-        this.setState({ category: params.category });
-        this.setState({ abbrAndMeaning: params.abbrAndMeaning });
-        this.setState({ numberKey: params.numberKey });        
+        this.setState({ id_main: params.id_main,
+            title: params.title,
+            category: params.category,
+            abbrAndMeaning: params.abbrAndMeaning,
+            numberKey: params.numberKey});
     }
 
     static navigationOptions = ({ navigation }) => {                
@@ -61,41 +67,40 @@ class Preview extends Component{
         })        
     }    
 
+    topContent = () => {
+        const {styTopContent, styTopText, styTopSub, styBadge, styBDText} = styles;
+
+        let title = <Text style={styTopText}>Title not set</Text>;
+        let keyword = <Text style={styTopSub}>Keyword not set</Text>;
+
+        if (this.state.title != null && this.state.title != ''){
+            title = <Text style={styTopText}>{this.state.title}</Text>
+        }
+
+        if (this.state.numberKey > 0){
+            keyword = <Text style={styTopSub}>{ this.setKeyword()}</Text>
+        }
+
+        return (
+            <View style={styTopContent}>
+                {title}
+                {keyword}
+                <View style={styBadge}>
+                    <Text style={styBDText}>{ this.state.numberKey }</Text>
+                </View>
+            </View>
+        );
+    }
+
     render(){
-        const { styContent, stySubtitle, styList } = styles;        
+        const { styContent, stySubtitle} = styles;    
 
         return(
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
-                <ScrollView>
+                <ScrollView>            
+                    {this.topContent()}
                     <CommonPage>   
-                        <View style={styList}>
-                            <Text style={ stySubtitle }>Title</Text>
-                        </View>
-                        <View style={styList}>                            
-                            <Text>{ this.state.title }</Text>
-                        </View>             
-                        <View style={styList}>                            
-                            <Text style={ stySubtitle }>Category</Text>
-                        </View>
-                        <View style={styList}>                            
-                            <Text>{ this.state.category }</Text>
-                        </View>
-                        <View style={styList}>                            
-                            <Text style={ stySubtitle }>Total Key</Text>
-                        </View>
-                        <View style={styList}>                            
-                            <Text>{ this.state.numberKey }</Text>
-                        </View>
-                        <View style={styList}>                            
-                            <Text style={ stySubtitle }>Keyword</Text>
-                        </View>
-                        <View style={styList}>                            
-                            <Text>{ this.setKeyword() }</Text>
-                        </View>
-                        <View style={styList}>
-                            <Text style={ stySubtitle }>Keyword List</Text>
-                        </View>
                         { this.extractData() }
                     </CommonPage>
                 </ScrollView>
@@ -114,11 +119,43 @@ const styles = {
         marginTop: 15,
         fontFamily: 'quicksand',
     },
-    styList: {
-       // borderBottomWidth: 1,
-        borderBottomColor: '#D5DCE4',
-        paddingBottom: 5
-    }
+    styTopContent: {
+        width: '100%',
+        height: 150,
+        backgroundColor: '#52BF90',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    styTopText: {
+        fontFamily: 'quicksand_medium',
+        fontSize: 19,
+        color: '#fff'
+    },
+    styTopSub: {
+        fontFamily: 'quicksand',
+        fontSize: 12,
+        color: '#fff'
+    },
+    styText: {
+        flex: 0, 
+        height: 21, 
+        justifyContent: 'center', 
+        color: '#747d8c',
+        fontFamily: 'quicksand',
+    },
+    styBadge: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 20,
+        width: 20,
+        backgroundColor: '#fff',
+        borderRadius: 50,
+        marginTop: 5
+    },
+    styBDText: {
+        color: '#52BF90',
+        fontFamily: 'quicksand_medium'
+    }  
 }
 
 export { Preview }

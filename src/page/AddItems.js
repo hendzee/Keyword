@@ -179,6 +179,7 @@ class AddItems extends Component{
                             maxLength={ 25 }
                             onChangeText={(text) => this.setState({ title: text })}
                             value={ this.state.title }
+                            autoCapitalize='sentences'
                         />
                     </InputBox>
                     <InputBox>
@@ -194,6 +195,7 @@ class AddItems extends Component{
                             maxLength={ 15 }
                             onChangeText={(text) => this.setState({ category: text })}
                             value={ this.state.category }
+                            autoCapitalize='sentences'
                         />
                     </InputBox>                   
                     <Text style={ stySubtitle }>
@@ -212,6 +214,7 @@ class AddItems extends Component{
                             maxLength={ 15 }
                             onChangeText={(text) => this.setState({ tempAbbr: text })}
                             value={ this.state.tempAbbr }
+                            autoCapitalize='characters'
                         />
                     </InputBox>
                     <InputBox>
@@ -227,6 +230,7 @@ class AddItems extends Component{
                             maxLength={ 15 }
                             onChangeText={(text) => this.setState({ tempMeaning: text })}
                             value={ this.state.tempMeaning }
+                            autoCapitalize='characters'
                         />
                     </InputBox>
                     <RowBox>  

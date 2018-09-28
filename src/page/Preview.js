@@ -98,8 +98,8 @@ class Preview extends Component{
         return(
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
+                {this.topContent()}
                 <ScrollView>            
-                    {this.topContent()}
                     <CommonPage>   
                         { this.extractData() }
                     </CommonPage>

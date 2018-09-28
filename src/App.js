@@ -5,7 +5,7 @@ const App = StackNavigator({
     home: {
         screen: Home,
         navigationOptions: {
-            title: 'keyword',
+            title: 'Keyword',
             headerStyle: {
                 backgroundColor: '#52bf90',
                 shadowOpacity: 0,                

@@ -89,8 +89,15 @@ class AddItems extends Component{
     }   
 
     deleteState = () => {
-        this.setState({ tempAbbr: '' });
-        this.setState({ tempMeaning: '' });
+        this.setState({
+            id_main: 0,
+            title: '',
+            category: '',
+            tempAbbr: '',
+            abbrAndMeaning: [],
+            tempMeaning: '',   
+            numberKey: 0,
+            status: '', });
     }
 
     saveData = () => {

@@ -13,7 +13,7 @@ const RowBox = (props) =>{
 
 const styles = {
     styContent: {
-        flex: 1,
+        width: '100%',
         flexDirection: 'row',
         marginTop: 15,
         marginBottom: 15

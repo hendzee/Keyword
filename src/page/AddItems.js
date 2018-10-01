@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, TextInput, Image, ScrollView, StatusBar, Alert } from 'react-native';
-import { HeaderButton, CommonPage, InputBox, RowBox, PrimaryButton, SecondaryButton, GreenButton, Separator, Footer } from '../components'
+import { HeaderButton, CommonPage, InputBox, RowBox, PrimaryButton, SecondaryButton, GreenButton, Separator} from '../components'
 import { NavigationActions } from 'react-navigation'
 import Realm from 'realm';
 
@@ -254,12 +254,10 @@ class AddItems extends Component{
                         <PrimaryButton onPress={ this.insertState }>
                             <Text style={ styButtonText }> Add </Text>
                         </PrimaryButton>
-                    </RowBox>                                       
-                    <Footer>
-                        <GreenButton onPress={ this.saveData }>
-                            <Text style={ styButtonText }>Save</Text>
-                        </GreenButton>
-                    </Footer>                      
+                    </RowBox>  
+                    <GreenButton onPress={ this.saveData }>
+                        <Text style={ styButtonText }>Save</Text>
+                    </GreenButton>                                                          
                 </CommonPage>                                                       
             </View>
         );

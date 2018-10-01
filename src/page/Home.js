@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StatusBar, Image, FlatList} from 'react-native';
+import { Text, View, BackHandler, StatusBar, Image, FlatList} from 'react-native';
 import { DataList, HeaderButton, CommonPage, WordList, IconBox } from '../components';
 import Realm from 'realm';
 
@@ -84,10 +84,6 @@ class Home extends Component{
         });   
     }
 
-    componentDidMount() {
-        this.props.navigation.setParams({ deleteHandler: this.deleteListHandler });
-    }
-
     static navigationOptions = ({ navigation }) => {        
         const { navigate } = navigation;
 
@@ -100,7 +96,8 @@ class Home extends Component{
                             style={{ width: 31, height: 31, tintColor: '#ffffff' }}                                             
                         />
                     </HeaderButton>
-                    <HeaderButton onPress={() => navigate('additems')}>
+                    <HeaderButton onPress={() =>
+                        navigate('additems')}>
                         <Image 
                             source={require('../img/add.png')} 
                             style={{ width: 31, height: 31, tintColor: '#ffffff' }}                                             

@@ -4,13 +4,18 @@ import { DataList, HeaderButton, CommonPage, WordList, IconBox } from '../compon
 import Realm from 'realm';
 
 class Home extends Component{
+    _didFocusSubscription;
+    _willBlurSubscription;
+
     constructor(props){
         super(props);
         this.state = {
             mainTableData: [],
             deleteList: []           
         };
-        this.selectHandler.bind(this);        
+        this.selectHandler.bind(this);  
+        this._didFocusSubscription = props.navigation.addListener('didFocus', payload =>
+            BackHandler.addEventListener('hardwareBackPress', this.backButtonHandler));      
     } 
 
     componentWillMount(){        
@@ -82,6 +87,22 @@ class Home extends Component{
                 })
             })
         });   
+    }
+
+    componentDidMount() {
+        this.props.navigation.setParams({ deleteHandler: this.deleteListHandler });
+        this._willBlurSubscription = this.props.navigation.addListener('willBlur', payload =>
+            BackHandler.removeEventListener('hardwareBackPress', this.backButtonHandler));
+    }
+
+    componentWillUnmount(){
+        this._didFocusSubscription && this._didFocusSubscription.remove();
+        this._willBlurSubscription && this._willBlurSubscription.remove();
+    }
+
+    backButtonHandler = () =>{
+        BackHandler.exitApp();
+        return true;
     }
 
     static navigationOptions = ({ navigation }) => {        

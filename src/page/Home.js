@@ -129,27 +129,48 @@ class Home extends Component{
         }        
     }        
 
+    getMainContent = () => {
+        let content = null;
+        const { styEmptyList, styThin, styBold } = styles;
+
+        if (this.state.mainTableData.length > 0){
+            content = (
+                <FlatList 
+                    data={this.state.mainTableData}
+                    extraData={this.state}
+                    keyExtractor={(item, index) => item.toString()}
+                    renderItem={({item}) => 
+                        <DataList 
+                            CBoxValue={item.checkBoxStatus}
+                            onChangeCheck={this.selectHandler.bind(null, item.id_main)}
+                            key={ item.id_main } 
+                            data={ item } onPress={() => this.props.navigation
+                                .navigate('review', { dataReview: item.id_main }) }
+                        />
+                    }
+                />
+            );
+        }else {
+            content = (
+                <View style={styEmptyList}>
+                    <Image source={require('../img/empty_list.png')} />
+                    <Text style={styBold}>LIST IS EMPTY</Text>
+                    <Text style={styThin}>Press plus icon to create new keyword</Text>
+                </View>
+            );
+        }
+
+        return content;
+    }
+
     render(){        
-        const { styContent, styScroll, styTopTitle } = styles;
+        const { styContent, styScroll, styTopTitle} = styles;
 
         return(                        
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
                 <CommonPage>
-                    <FlatList 
-                        data={this.state.mainTableData}
-                        extraData={this.state}
-                        keyExtractor={(item, index) => item.toString()}
-                        renderItem={({item}) => 
-                            <DataList 
-                                CBoxValue={item.checkBoxStatus}
-                                onChangeCheck={this.selectHandler.bind(null, item.id_main)}
-                                key={ item.id_main } 
-                                data={ item } onPress={() => this.props.navigation
-                                    .navigate('review', { dataReview: item.id_main }) }
-                            />
-                        }
-                    />
+                   {this.getMainContent()}
                 </CommonPage>
             </View>
         );
@@ -167,6 +188,19 @@ const styles = {
         fontSize: 18,
         fontFamily: 'quicksand'  
     },
+    styEmptyList: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
+    },
+    styThin: {
+        fontFamily: 'quicksand'
+    },
+    styBold: {
+        fontSize: 19,
+        fontFamily: 'quicksand-medium'
+    }
 }
 
 //Realm Database

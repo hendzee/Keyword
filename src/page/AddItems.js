@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, Image, ScrollView, StatusBar, Alert } from 'react-native';
+import { Text, View, TextInput, Image, ScrollView, StatusBar, ToastAndroid } from 'react-native';
 import { HeaderButton, CommonPage, InputBox, RowBox, PrimaryButton, SecondaryButton, GreenButton, Separator} from '../components'
 import { NavigationActions } from 'react-navigation'
 import Realm from 'realm';
@@ -103,10 +103,18 @@ class AddItems extends Component{
     saveData = () => {
         if (this.state.title == null || this.state.category == null || 
             this.state.title == '' || this.state.category == ''){
-            Alert.alert('input title and category');
+            ToastAndroid.showWithGravity(
+                'input title and category',
+                ToastAndroid.SHORT,
+                ToastAndroid.CENTER
+            );
         }else {
             if (this.state.numberKey <= 0){
-                Alert.alert('create abbrevation');
+                ToastAndroid.showWithGravity(
+                    'create abbrevation',
+                    ToastAndroid.SHORT,
+                    ToastAndroid.CENTER
+                );
             }else {
                 this.createIdMain();
         
@@ -137,7 +145,11 @@ class AddItems extends Component{
                     });
                     
                     this.cleanState();
-                    Alert.alert('data saved');
+                    ToastAndroid.showWithGravity(
+                        'data saved',
+                        ToastAndroid.SHORT,
+                        ToastAndroid.CENTER
+                    );
                 });
             }
         }

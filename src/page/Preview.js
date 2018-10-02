@@ -94,7 +94,7 @@ class Preview extends Component{
 
     getMainContent = () => {
         let content = null;
-        const { styEmptyList, styThin, styBold, imgInfo } = styles;
+        const { styEmptyList, styThin, styBold } = styles;
 
         if (this.state.numberKey > 0){
             content = (
@@ -102,8 +102,7 @@ class Preview extends Component{
             );
         }else {
             content = (
-                <View style={styEmptyList}>
-                    <Image style={imgInfo} source={require('../img/empty_list.png')} />
+                <View style={styEmptyList}>                   
                     <Text style={styBold}>LIST IS EMPTY</Text>
                     <Text style={styThin}>Create min 1 abbrevation</Text>
                 </View>
@@ -119,8 +118,8 @@ class Preview extends Component{
         return(
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
-                {this.topContent()} 
                 <ScrollView>
+                    {this.topContent()} 
                     <CommonPage>   
                         {this.getMainContent()}
                     </CommonPage>
@@ -145,7 +144,9 @@ const styles = {
         height: 150,
         backgroundColor: '#52BF90',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingRight: 15,
+        paddingLeft: 15
     },
     styTopText: {
         fontFamily: 'quicksand_medium',
@@ -189,10 +190,7 @@ const styles = {
     styBold: {
         fontSize: 19,
         fontFamily: 'quicksand-medium'
-    },
-    imgInfo: {
-        marginBottom: 5
-    }  
+    }
 }
 
 export { Preview }

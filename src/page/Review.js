@@ -7,7 +7,9 @@ class Review extends Component{
     constructor(props){
         super(props);
         this.state = {
-            listTableData: []
+            listTableData: [],
+            title: '',
+            category: ''
         };    
     }
 
@@ -23,6 +25,8 @@ class Review extends Component{
 
             this.setState({ listTableData: dataTable });
         });
+
+        this.setState({ title: params.dataTitle, category: params.dataCategory })
     }
 
     extractData = () => {
@@ -32,7 +36,7 @@ class Review extends Component{
             keyword += data.abbrevation
         );
 
-        return keyword;
+        return <Text>{keyword}</Text>;
     }
 
     extractAbbrevation = () => {
@@ -70,14 +74,17 @@ class Review extends Component{
                 <ScrollView>
                     <View style={styTopContent}>
                         <Text style={ styTopText }>
-                            Keyword
+                            {this.state.title}
                         </Text>                                   
-                        <Text style={styTopSub}>{ this.extractData() }</Text>                                            
+                        <Text style={styTopSub}>
+                            {this.state.category}
+                        </Text>                                            
                     </View>                
                     <CommonPage>                    
                         <Text style={ stySubtitle }>
                             Abbrevation
                         </Text> 
+                        { this.extractData() }
                         { this.extractAbbrevation() }
                     </CommonPage>
                 </ScrollView>
@@ -114,7 +121,9 @@ const styles = {
         height: 150,
         backgroundColor: '#52BF90',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingRight: 15,
+        paddingLeft: 15
     },
     styTopText: {
         fontFamily: 'quicksand_medium',

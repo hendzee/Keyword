@@ -145,7 +145,8 @@ class Home extends Component{
                             onChangeCheck={this.selectHandler.bind(null, item.id_main)}
                             key={ item.id_main } 
                             data={ item } onPress={() => this.props.navigation
-                                .navigate('review', { dataReview: item.id_main }) }
+                                .navigate('review', { dataReview: item.id_main, dataTitle: item.title,
+                                dataCategory: item.category }) }
                         />
                     }
                 />

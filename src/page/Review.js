@@ -67,20 +67,20 @@ class Review extends Component{
         return(
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
-                <View style={styTopContent}>
-                    <Text style={ styTopText }>
-                        Keyword
-                    </Text>                                   
-                    <Text style={styTopSub}>{ this.extractData() }</Text>                                            
-                </View>
-                <CommonPage>
-                    <ScrollView>
+                <ScrollView>
+                    <View style={styTopContent}>
+                        <Text style={ styTopText }>
+                            Keyword
+                        </Text>                                   
+                        <Text style={styTopSub}>{ this.extractData() }</Text>                                            
+                    </View>                
+                    <CommonPage>                    
                         <Text style={ stySubtitle }>
                             Abbrevation
                         </Text> 
                         { this.extractAbbrevation() }
-                    </ScrollView>
-                </CommonPage>
+                    </CommonPage>
+                </ScrollView>
             </View>
         )
     }

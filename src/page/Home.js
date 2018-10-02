@@ -131,7 +131,7 @@ class Home extends Component{
 
     getMainContent = () => {
         let content = null;
-        const { styEmptyList, styThin, styBold } = styles;
+        const { styEmptyList, styThin, styBold, imgInfo } = styles;
 
         if (this.state.mainTableData.length > 0){
             content = (
@@ -153,7 +153,7 @@ class Home extends Component{
         }else {
             content = (
                 <View style={styEmptyList}>
-                    <Image source={require('../img/empty_list.png')} />
+                    <Image style={imgInfo} source={require('../img/empty_list.png')} />
                     <Text style={styBold}>LIST IS EMPTY</Text>
                     <Text style={styThin}>Press plus icon to create new keyword</Text>
                 </View>
@@ -200,6 +200,9 @@ const styles = {
     styBold: {
         fontSize: 19,
         fontFamily: 'quicksand-medium'
+    },
+    imgInfo: {
+        marginBottom: 5
     }
 }
 

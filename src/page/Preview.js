@@ -92,18 +92,39 @@ class Preview extends Component{
         );
     }
 
+    getMainContent = () => {
+        let content = null;
+        const { styEmptyList, styThin, styBold, imgInfo } = styles;
+
+        if (this.state.numberKey > 0){
+            content = (
+                content = this.extractData()             
+            );
+        }else {
+            content = (
+                <View style={styEmptyList}>
+                    <Image style={imgInfo} source={require('../img/empty_list.png')} />
+                    <Text style={styBold}>LIST IS EMPTY</Text>
+                    <Text style={styThin}>Create min 1 abbrevation</Text>
+                </View>
+            );
+        }
+
+        return content;
+    }
+
     render(){
         const { styContent, stySubtitle} = styles;    
 
         return(
             <View style={ styContent }>
                 <StatusBar backgroundColor='#317256' />
-                {this.topContent()}
-                <ScrollView>            
+                {this.topContent()} 
+                <ScrollView>
                     <CommonPage>   
-                        { this.extractData() }
+                        {this.getMainContent()}
                     </CommonPage>
-                </ScrollView>
+                </ScrollView>                  
             </View>
         );
     }
@@ -150,11 +171,27 @@ const styles = {
         width: 20,
         backgroundColor: '#fff',
         borderRadius: 50,
-        marginTop: 5
+        marginTop: 5,
     },
     styBDText: {
         color: '#52BF90',
         fontFamily: 'quicksand_medium'
+    },
+    styEmptyList: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column'
+    },
+    styThin: {
+        fontFamily: 'quicksand'
+    },
+    styBold: {
+        fontSize: 19,
+        fontFamily: 'quicksand-medium'
+    },
+    imgInfo: {
+        marginBottom: 5
     }  
 }
 
